@@ -1,4 +1,11 @@
+set width of containers and images to be 100% for responsivness purposes
+do not leave empty classNames or unused variables in the code...
+create organized components tree structure
+
+---
+
 Veuillez trouver ci-dessous le font à utiliser et les règles à respecter :
+
 ++Utiliser Framework (React Js)
 ++Utiliser CSS ou SCSS (de préférence SCSS)
 ++Utiliser Ant Design  
@@ -12,9 +19,14 @@ Veuillez trouver ci-dessous le font à utiliser et les règles à respecter :
 ++Organiser les fichiers liés au même composant dans un dossier.
 ++Évitez le code répétitif.
 
-do not leave empty classNames or unused variables in the code...
-create organized components tree structure
-
 Projet figma :
 
 https://www.figma.com/file/0QVSc2KpN1hLxhVyDq3JnP/Welcome-to-Peaqock?node-id=0%3A1
+
+antd Column breakpoints ::
+xs screen < 576px and also default setting, could be a span value or an object containing above props number | object -
+sm screen ≥ 576px, could be a span value or an object containing above props number | object -
+md screen ≥ 768px, could be a span value or an object containing above props number | object -
+lg screen ≥ 992px, could be a span value or an object containing above props number | object -
+xl screen ≥ 1200px, could be a span value or an object containing above props number | object -
+xxl screen ≥ 1600px, could be a span value or an object containing above props
