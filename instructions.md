@@ -8,6 +8,7 @@ Veuillez trouver ci-dessous le font à utiliser et les règles à respecter :
 
 ++Utiliser Framework (React Js)
 ++Utiliser CSS ou SCSS (de préférence SCSS)
+++écrire la première lettre des classNames lowercase par ex : "search-form"
 ++Utiliser Ant Design  
 ++Tester la compatibilité entre les navigateurs (Chrome, Firefox, Edge...).
 ++Assurer l'intégration responsive.
