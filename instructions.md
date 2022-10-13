@@ -17,7 +17,7 @@ Veuillez trouver ci-dessous le font à utiliser et les règles à respecter :
 ++Utiliser BEM (Bloc, Element, Modifier) (BEM est une méthodologie de nommage qui tend à découper les entités de votre page en blocs et éléments).
 ++Utiliser Javascript ou bien Typescript.
 ++Using Functional Components and Hooks Instead of Classes.
-++Organiser les fichiers liés au même composant dans un dossier.
+++Organiser les fichiers liés au même composant dans un meme dossier.
 ++Évitez le code répétitif.
 
 Projet figma :

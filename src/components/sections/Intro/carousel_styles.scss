@@ -1,0 +1,56 @@
+.home-carousel {
+  .home-carousel-header {
+    // border: 1px solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    // border: 2px solid red;
+    height: 75px;
+    .home-carousel-header-left {
+      margin-bottom: 10px;
+
+      span.home-carousel-header-left__digit {
+        font-family: "Sofia Pro";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 30px;
+        text-transform: uppercase;
+        color: #ffffff;
+      }
+    }
+    .home-carousel-btns {
+      margin-right: 105px;
+      .ant-btn {
+        &.ant-btn-default {
+          background: none;
+          padding: 0;
+          border: none;
+          margin-right: 10px;
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+        &.reset-btn {
+          position: relative;
+          bottom: 10px;
+        }
+      }
+    }
+  }
+
+  .home-carousel-divider {
+    // margin-left: -50px;
+    .home-carousel-ant-divider {
+      margin-top: 0px;
+    }
+  }
+  .home-carousel-carousel {
+    margin-right: 130px;
+    .slick-dots {
+      &.slick-dots-right {
+        margin-right: -20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+.stat-comp {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  .stat-comp-header {
+    span.stat-comp-header__digit {
+      font-family: "Sofia Pro";
+      font-style: normal;
+      font-weight: 900;
+      font-size: 60px;
+      line-height: 100%;
+      text-align: center;
+      text-transform: uppercase;
+      color: #127682;
+    }
+  }
+  .stat-comp-footer {
+    span.stat-comp-footer__text {
+      font-family: "Sofia Pro";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 140%;
+      text-align: center;
+      text-transform: capitalize;
+      color: #99a5b5;
+    }
+  }
+}
+
+.ant-col-offset-0_5 {
+  margin-left: 2.08%;
+}

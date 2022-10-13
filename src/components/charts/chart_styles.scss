@@ -1,0 +1,19 @@
+.pie-chart {
+  display: inline-flex;
+
+  .pie-chart-chart {
+  }
+  .pie-chart-logo {
+    z-index: 999 !important;
+
+    img {
+      margin-left: -400px;
+      margin-top: 250px;
+    }
+  }
+}
+
+.highcharts-container {
+  height: 600px !important;
+  width: 650px !important;
+}
