@@ -10,6 +10,11 @@ import "./fonts/Sofia-Pro/SofiaProMediumAz.otf";
 import "./fonts/Sofia-Pro/SofiaProRegularAz.otf";
 import "./fonts/Sofia-Pro/SofiaProSemiBoldAz.otf";
 import "./fonts/Sofia-Pro/SofiaProUltraLightAz.otf";
+//Circe font
+import "./fonts/Circe/Circe-Bold.otf";
+import "./fonts/Circe/Circe-ExtraBold.otf";
+import "./fonts/Circe/Circe-ExtraLight.otf";
+import "./fonts/Circe/Circe-Light.otf";
 
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";

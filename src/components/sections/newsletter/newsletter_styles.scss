@@ -1,0 +1,94 @@
+.peaqock-newsletter {
+  align-items: center;
+  margin-top: 240px;
+  .peaqock-newsletter-left-col {
+    .peaqock-newsletter-left {
+      margin-left: 160px;
+
+      span {
+        font-family: "Sofia Pro";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 30px;
+        text-transform: uppercase;
+        color: #252525;
+        &::after {
+          content: ""; /* This is necessary for the pseudo element to work. */
+          display: block; /* This will put the pseudo element on its own line. */
+          width: 10%; /* Change this to whatever width you want. */
+          padding-top: 10px; /* This creates some space between the element and the border. */
+          border-bottom: 5px solid #9f2241; /* This creates the border. */
+        }
+      }
+    }
+  }
+
+  .peaqock-newsletter-right-col {
+    .peaqock-newsletter-right {
+      display: flex;
+      .peaqock-newsletter-right__input {
+        padding: 5px 220px 5px 5px;
+        height: 60px;
+        width: 800px;
+        border-radius: 60px;
+        background: #e3e7ed;
+
+        .ant-input {
+          border-radius: 60px;
+          background: #e3e7ed;
+          padding: 0px 10px;
+          width: 800px;
+        }
+        .ant-input-suffix {
+          .ant-input-clear-icon {
+            &:hover {
+              transform: scale(1.5);
+            }
+          }
+        }
+        &.ant-input-affix-wrapper {
+        }
+      }
+      .peaqock-newsletter-right__btn {
+        background: linear-gradient(176.61deg, #127682 -3.6%, #20c7ab 126.31%);
+        border-radius: 60px;
+        width: 240px;
+        height: 60px;
+        right: 190px;
+        span {
+          font-family: "Circe";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 29px;
+          color: #f4f6fa;
+          margin-right: 30px;
+        }
+        &.success_sub {
+          background: #127682;
+          border: none;
+          span {
+            letter-spacing: 2px;
+            margin-right: 0px;
+          }
+        }
+      }
+    }
+  }
+
+  .peaqock-newsletter__error-msg {
+    span {
+      font-family: "Sofia Pro";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 30px;
+      display: flex;
+      align-items: center;
+      color: red;
+      margin-left: 100px;
+      margin-top: 20px;
+    }
+  }
+}

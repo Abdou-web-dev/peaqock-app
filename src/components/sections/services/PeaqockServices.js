@@ -1,11 +1,21 @@
-import { Button, Col, Row } from "antd";
-import { PieChart } from "../../charts/PieChart";
+import { Col, Row } from "antd";
+import { SectionsContent } from "../../content/SectionsContent";
 // import ImgChart from "../../../assets/images/shape.svg";
+import { useState } from "react";
+import { PieChart } from "../../charts/PieChart";
 import "./services_styles.scss";
 
-export const PeaqockServices = () => {
+export const PeaqockServices = (PeaqockServicesData) => {
+  const [paragraph, setparagraph] = useState(PeaqockServicesData.p);
+  const [myTitleLeft, setmyTitleLeft] = useState(
+    PeaqockServicesData.title.left
+  );
+  const [myTitleRight, setmyTitleRight] = useState(
+    PeaqockServicesData.title.right
+  );
+
   return (
-    <Row className="peaqock-services">
+    <Row gutter={0} className="peaqock-services">
       <Col
         className="peaqock-services-left"
         xs={2}
@@ -14,19 +24,15 @@ export const PeaqockServices = () => {
         lg={8}
         xl={10}
         offset={2}
+        // order="2"
+        // push
+        // pull="1"
+        // prefixCls="pref-test"
       >
-        <div>
-          <h1>our services</h1>
-          <h2>Trade Simple</h2>
-          <div style={{ width: `560px` }}>
-            <p>
-              Discover a world of trade opportunities in one place with detailed
-              information about imports, market dynamics, tariffs, regulatory
-              requirements, potential buyers and more.
-            </p>
-          </div>
-          <Button>Discover Now</Button>
-        </div>
+        <SectionsContent
+          {...PeaqockServicesData}
+          {...{ paragraph, myTitleLeft, myTitleRight }}
+        ></SectionsContent>
       </Col>
 
       <Col
@@ -39,7 +45,16 @@ export const PeaqockServices = () => {
         offset={2}
       >
         <div className="peaqock-services-chart">
-          <PieChart></PieChart>
+          <PieChart
+            {...{
+              setparagraph,
+              paragraph,
+              myTitleLeft,
+              myTitleRight,
+              setmyTitleLeft,
+              setmyTitleRight,
+            }}
+          ></PieChart>
         </div>
       </Col>
     </Row>

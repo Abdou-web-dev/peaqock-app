@@ -1,0 +1,190 @@
+@import "@fontsource/inter";
+
+.peaqock-member {
+  margin-top: 150px;
+
+  .peaqock-member-col-header {
+    .peaqock-member-header-elem {
+    }
+  }
+
+  .peaqock-member-col-footer {
+    margin-top: 100px;
+    .peaqock-member-footer-elem {
+      .peaqock-member-footer-elem-row {
+        display: flex;
+
+        .peaqock-member-footer-elem-col1 {
+          order: 1;
+          &:hover {
+            background-color: rgba(211, 211, 211, 0.2);
+            border-radius: 10px;
+          }
+        }
+        .peaqock-member-footer-elem-col2 {
+          order: 3;
+          &:hover {
+            background-color: rgba(211, 211, 211, 0.2);
+            border-radius: 10px;
+          }
+        }
+        .peaqock-member-footer-elem-col3 {
+          order: 2;
+          &:hover {
+            background-color: rgba(211, 211, 211, 0.2);
+            border-radius: 10px;
+          }
+        }
+        .peaqock-member-footer-elem-col4 {
+          order: 4;
+          &:hover {
+            background-color: rgba(211, 211, 211, 0.2);
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.peaqock-member-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .peaqock-member-header__h3 {
+    h3 {
+      font-family: "Sofia Pro";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 35px;
+      text-transform: uppercase;
+      color: #99a5b5;
+    }
+  }
+
+  .peaqock-member-header__h1 {
+    margin-bottom: 20px;
+    h1 {
+      font-family: "Sofia Pro";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 60px;
+      color: #414141;
+      margin-bottom: 0;
+    }
+  }
+
+  .peaqock-member-header__p {
+    width: 59%;
+    margin-bottom: 70px;
+    p {
+      font-family: "Sofia Pro";
+      font-style: normal;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 30px;
+      text-align: center;
+      color: #585e66;
+      margin-bottom: 0;
+    }
+  }
+
+  .peaqock-member-header-footer {
+    .peaqock-member-header-footer__button {
+      padding: 10px 40px;
+      width: 318px;
+      height: 55px;
+      background: rgba(18, 118, 130, 0.1);
+      border-radius: 60px;
+      .peaqock-member-footer__button-text {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 35px;
+        color: #127682;
+        margin-right: 27px;
+      }
+      .peaqock-member-footer__button-img {
+      }
+    }
+  }
+}
+
+.peaqock-member-footer-elem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 40px;
+  .peaqock-member-footer-elem-left {
+    margin-right: 20px;
+    background: rgb(230, 232, 238);
+    border-radius: 20px;
+    width: 100px;
+    height: 100px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      height: 40px;
+      width: 40px;
+    }
+  }
+  .peaqock-member-footer-elem-center {
+    margin-right: 54px;
+
+    .peaqock-member-footer-elem-center-label {
+      margin-bottom: 10px;
+      span {
+        font-family: "Sofia Pro";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 30px;
+        color: #127682;
+      }
+    }
+    .peaqock-member-footer-elem-center-text {
+      width: 330px;
+      p {
+        font-family: "Sofia Pro";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 20px;
+        color: #585e66;
+      }
+    }
+  }
+  .peaqock-member-footer-elem-right {
+    .peaqock-member-footer-elem-right__button {
+      border-radius: 10px;
+      height: 54px;
+      width: 178px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      span.btn_span1 {
+        font-family: "Sofia Pro";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 14px;
+        color: #ffffff;
+      }
+      span.btn_span2 {
+        font-family: "Sofia Pro";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 14px;
+        text-align: right;
+        color: #ffffff;
+      }
+    }
+  }
+}

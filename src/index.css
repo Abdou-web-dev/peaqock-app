@@ -52,3 +52,27 @@
     url("./fonts/Sofia-Pro/SofiaProUltraLightAz.otf") format("truetype");
   font-weight: 200;
 }
+/* Circe */
+
+@font-face {
+  font-family: "Circe";
+  src: local("Circe"), url("./fonts/Circe/Circe-Bold.otf") format("truetype");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "Circe";
+  src: local("Circe"),
+    url("./fonts/Circe/Circe-ExtraBold.otf") format("truetype");
+  font-weight: 900;
+}
+@font-face {
+  font-family: "Circe";
+  src: local("Circe"), url("./fonts/Circe/Circe-Light.otf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Circe";
+  src: local("Circe"),
+    url("./fonts/Circe/Circe-ExtraLight.otf") format("truetype");
+  font-weight: 200;
+}

@@ -1,10 +1,19 @@
 import "antd/dist/antd.css"; //this import is essential in antd
-import React from "react";
+import React, { useState } from "react";
 
-const MemberShip = () => {
+const MemberShip = ({ text }) => {
+  const [word, setText] = useState(text);
   return (
     <div className="">
-      <span>MemberShip page</span>
+      <span>MemberShip page</span> <br />
+      <span>{word}</span>
+      <button
+        onClick={() => {
+          setText("changed");
+        }}
+      >
+        btn
+      </button>
     </div>
   );
 };

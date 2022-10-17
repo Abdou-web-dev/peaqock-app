@@ -3,7 +3,20 @@ import Highcharts from "highcharts/highstock";
 import peaqockLogo from "../../assets/images/peaqockLogo.svg";
 import "./chart_styles.scss";
 
-export function PieChart({}) {
+export function PieChart({
+  setparagraph,
+  paragraph,
+  setmyTitleLeft,
+  setmyTitleRight,
+  myTitleLeft,
+  myTitleRight,
+}) {
+  function handleLeave() {
+    setparagraph(paragraph);
+    setmyTitleLeft(myTitleLeft);
+    setmyTitleRight(myTitleRight);
+  }
+
   const options = {
     chart: {
       type: "pie",
@@ -30,6 +43,7 @@ export function PieChart({}) {
         // size: "160%",
         center: ["50%", "50%"], //alows the chart to move
         showInLegend: false,
+        point: {},
       },
       series: {
         dataLabels: {
@@ -46,15 +60,52 @@ export function PieChart({}) {
         data: [
           {
             y: 33,
-            name: " Market Attractiveness ",
+            name: "Market Attractiveness",
+            events: {
+              mouseOver() {
+                setparagraph(`Market Attractiveness ,Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam optio
+                atque magnam aliquam repellendus illo repellat minima, corrupti quia quidem
+                eligendi consequatur`);
+                setmyTitleLeft(`Attract`);
+                setmyTitleRight(`Customers`);
+              },
+              mouseOut: function () {
+                handleLeave();
+              },
+            },
           },
           {
-            y: 33,
-            name: " Connect with potential partners",
+            y: 35,
+            name: "Connect with potential partners",
+            events: {
+              mouseOver() {
+                setparagraph(`Connect with potential partners, Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ratione
+                quaerat beatae vitae cum, harum necessitatibus praesentium quidem explicabo
+                quis`);
+                setmyTitleLeft(`Connect`);
+                setmyTitleRight(`with people`);
+              },
+              mouseOut: function () {
+                handleLeave();
+              },
+            },
           },
           {
             y: 33,
             name: "Find business opportunities",
+            events: {
+              mouseOver() {
+                setparagraph(`Find business opportunities Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam,
+                necessitatibus Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea,
+                dolor.`);
+                setmyTitleLeft(`Find`);
+
+                setmyTitleRight(`opportunities`);
+              },
+              mouseOut: function () {
+                handleLeave();
+              },
+            },
           },
         ],
       },

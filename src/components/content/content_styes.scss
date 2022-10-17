@@ -9,3 +9,95 @@
     color: #ffffff;
   }
 }
+
+.section-content {
+  .section-content-header {
+    .section-content__h1 {
+      font-family: "Sofia Pro";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 35px;
+      text-transform: uppercase;
+      color: #99a5b5;
+    }
+
+    .section-content-header-subtitle {
+      display: inline-flex;
+
+      .section-content__h3-left,
+      .section-content__h3-right {
+        font-family: "Sofia Pro";
+        font-style: normal;
+        font-weight: 900;
+        font-size: 55px;
+        line-height: 50px;
+        color: #f4c748;
+      }
+      .section-content__h3-right {
+        color: #252525;
+        margin-left: 20px;
+      }
+    }
+
+    .section-content-about-subtitle {
+      width: 80%;
+      margin-bottom: 20px;
+      span.section-content-about-subtitle__text {
+        font-family: "Sofia Pro";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 60px;
+        color: #252525;
+      }
+    }
+
+    .section-content-paragraph {
+      // margin-bottom: 60px;
+      .section-content__p {
+        font-family: "Sofia Pro";
+        font-style: normal;
+        font-weight: 250;
+        font-size: 20px;
+        line-height: 35px;
+        color: #474747;
+      }
+      .section-about__p {
+        font-family: "Sofia Pro";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 30px;
+        color: #585e66;
+      }
+    }
+  }
+
+  .section-content-footer {
+    display: inline-block;
+    .section-content__btn,
+    .section-about__btn {
+      background: linear-gradient(94.13deg, #25937e -15.76%, #20c7ab 115.67%);
+      border-radius: 60px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 40px;
+      border: none;
+      span {
+        color: #f4f6fa;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 35px;
+      }
+    }
+    .section-about__btn {
+      background: #127682;
+      border: 2px solid #127682;
+    }
+  }
+}

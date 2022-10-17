@@ -4,7 +4,7 @@ import "./stats_styles.scss";
 
 export const PeaqockStatistics = ({ statsData }) => {
   return (
-    <Row>
+    <Row className="peaqock-statistics">
       {statsData.map &&
         statsData?.map((elem, index) => (
           <Col
