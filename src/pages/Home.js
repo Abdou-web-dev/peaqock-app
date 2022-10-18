@@ -1,5 +1,6 @@
 import "antd/dist/antd.css"; //this import is essential in antd
 import { PeaqockAbout } from "../components/sections/about/PeaqockAbout";
+import { PeaqockFooter } from "../components/sections/footer/PeaqockFooter";
 import { HomeIntro } from "../components/sections/Intro/HomeIntro";
 import { PeaqockMemberShip } from "../components/sections/membership/PeaqockMemberShip";
 import { PeaqockNewsLetter } from "../components/sections/newsletter/PeaqockNewsLetter";
@@ -88,12 +89,9 @@ const PeaqockMemberData = {
     },
   },
 };
+
 const Home = () => {
   return (
-    //do the same for other comp
-    // .peaqocks-tatistics {
-    // width: 100%;
-    // }
     <div>
       <div>
         <HomeIntro></HomeIntro>
@@ -118,6 +116,14 @@ const Home = () => {
       <div>
         <PeaqockNewsLetter {...PeaqockMemberData} />
       </div>
+
+      <div>
+        <PeaqockFooter />
+      </div>
+
+      {/* <div>
+        <BackTop />
+      </div> */}
     </div>
   );
 };

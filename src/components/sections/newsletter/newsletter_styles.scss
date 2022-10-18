@@ -1,6 +1,7 @@
 .peaqock-newsletter {
   align-items: center;
   margin-top: 240px;
+  padding-bottom: 60px;
   .peaqock-newsletter-left-col {
     .peaqock-newsletter-left {
       margin-left: 160px;
@@ -84,11 +85,39 @@
       font-weight: 700;
       font-size: 20px;
       line-height: 30px;
-      display: flex;
-      align-items: center;
       color: red;
       margin-left: 100px;
-      margin-top: 20px;
+    }
+  }
+  .peaqock-newsletter__error-valid-msg {
+    span {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: rgba(255, 0, 0, 0.792);
+      margin-left: 100px;
+    }
+  }
+  .peaqock-newsletter__error-valid-msg-with-icon {
+    margin-left: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 800;
+      font-size: 16px;
+      letter-spacing: 2px;
+      color: rgba(255, 0, 0, 0.56);
+    }
+    img {
+      width: 32px;
+      height: 32px;
+      color: red;
+      margin-right: 10px;
     }
   }
 }

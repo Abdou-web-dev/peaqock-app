@@ -1,5 +1,6 @@
 import { Alert, Button, Col, Input, Row } from "antd";
 import { useState } from "react";
+import exclamation from "../../../assets/images/exclamation-icon.svg";
 import arrow from "../../../assets/images/right_arrow_news.svg";
 import "./newsletter_styles.scss";
 
@@ -9,22 +10,40 @@ export const PeaqockNewsLetter = () => {
   const [openAlert, setopenAlert] = useState(false);
   const [inputValue, setinputValue] = useState("");
   const [error, setOpenError] = useState(false);
+  const [validError, setvalidError] = useState(false);
+  const [validErrorIcon, setvalidErrorIcon] = useState(false);
 
+  function isValidEmail(emailAddress) {
+    return /\S+@\S+\.\S+/.test(emailAddress);
+  }
   const handleChange = (e) => {
-    console.log(e.target.value);
+    if (!isValidEmail(inputValue)) {
+      setvalidError(true);
+      console.log("invalid");
+    } else {
+      setvalidError(false);
+      console.log("valid");
+    }
     setinputValue(e.target.value);
   };
-  const handlePressEnter = (value) => console.log(value);
+  const handlePressEnter = () => {
+    handleClick();
+  };
   const handleInputHover = () => {
     setZindex(999);
   };
   const handleClick = () => {
-    setLoading(true);
-    setTimeout(() => {
-      setopenAlert(true);
-    }, 1500);
+    if (!isValidEmail(inputValue)) {
+      setvalidError(false);
+      setvalidErrorIcon(true);
+    } else {
+      setLoading(true);
+      setTimeout(() => {
+        setopenAlert(true);
+      }, 1500);
+    }
   };
-
+  let errors = validErrorIcon || error || validError;
   return (
     <Row justify="center" gutter={0} className="peaqock-newsletter">
       <Col
@@ -51,8 +70,17 @@ export const PeaqockNewsLetter = () => {
         <div className="peaqock-newsletter-right">
           <Input
             style={{
-              border:
-                error && inputValue.length === 0 ? "1px solid red" : "none",
+              border: openAlert
+                ? "1px solid lightgray"
+                : isValidEmail(inputValue) &&
+                  (inputValue?.length !== 0 || !errors)
+                ? "2px solid green"
+                : inputValue?.length !== 0 || errors
+                ? "2px solid red"
+                : "none",
+              boxShadow: openAlert
+                ? "rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px"
+                : "",
             }}
             disabled={loading === true ? true : false}
             value={inputValue}
@@ -64,9 +92,11 @@ export const PeaqockNewsLetter = () => {
             onChange={(e) => {
               handleChange(e);
             }}
-            onPressEnter={handlePressEnter}
+            onPressEnter={(e) => {
+              handlePressEnter(e);
+            }}
           />
-          {!loading && openAlert === false && inputValue.length !== 0 ? (
+          {!loading && openAlert === false && inputValue?.length !== 0 ? (
             <Button
               className="peaqock-newsletter-right__btn"
               loading={loading}
@@ -76,7 +106,7 @@ export const PeaqockNewsLetter = () => {
               <span>{`Subscribe`}</span>
               <img src={arrow} alt="" />
             </Button>
-          ) : !loading && openAlert === false && inputValue.length === 0 ? (
+          ) : !loading && openAlert === false && inputValue?.length === 0 ? (
             <Button
               onClick={() => {
                 setOpenError(true);
@@ -88,14 +118,14 @@ export const PeaqockNewsLetter = () => {
               <span>{`Subscribe`}</span>
               <img src={arrow} alt="" />
             </Button>
-          ) : loading && openAlert === true && inputValue.length !== 0 ? (
+          ) : loading && openAlert === true && inputValue?.length !== 0 ? (
             <Button
               style={{ zIndex: Zindex }}
               className="peaqock-newsletter-right__btn success_sub"
             >
               <span>{`Subscribed !`}</span>
             </Button>
-          ) : loading && openAlert === false && inputValue.length !== 0 ? (
+          ) : loading && openAlert === false && inputValue?.length !== 0 ? (
             <Button
               className="peaqock-newsletter-right__btn"
               loading={true}
@@ -107,7 +137,7 @@ export const PeaqockNewsLetter = () => {
         </div>
       </Col>
       <>
-        {openAlert && inputValue.length !== 0 && (
+        {openAlert && inputValue?.length !== 0 && (
           <Alert
             style={{ marginTop: "15px" }}
             closable
@@ -117,11 +147,27 @@ export const PeaqockNewsLetter = () => {
         )}
       </>
       <>
-        {error === true && inputValue.length === 0 && openAlert === false && (
+        {error === true && inputValue?.length === 0 && openAlert === false && (
           <div className="peaqock-newsletter__error-msg">
             <span>Please type an email address !</span>
           </div>
         )}
+        {validError && inputValue?.length !== 0 && (
+          <div className="peaqock-newsletter__error-valid-msg">
+            <span>Please type a valid email address !</span>
+          </div>
+        )}
+        {validErrorIcon &&
+          !validError &&
+          !openAlert &&
+          !loading &&
+          inputValue?.length !== 0 &&
+          !isValidEmail(inputValue) && (
+            <div className="peaqock-newsletter__error-valid-msg-with-icon">
+              <img src={exclamation} alt="error occured" />
+              <span>Please type a valid email address </span>
+            </div>
+          )}
       </>
     </Row>
   );

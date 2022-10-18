@@ -30,15 +30,7 @@ const App = () => {
           <Route path="/subpage1" element={<SubPage1 />} />
         </Routes>
       </Content>
-      <Footer
-        style={{
-          textAlign: "center",
-          paddingTop: `400px`,
-          // border: "1px solid",
-        }}
-      >
-        Ant Design ©2018 Created by Ant UED
-      </Footer>
+      {/* <Footer></Footer> */}
     </Layout>
   );
 };
