@@ -120,10 +120,6 @@ const Home = () => {
       <div>
         <PeaqockFooter />
       </div>
-
-      {/* <div>
-        <BackTop />
-      </div> */}
     </div>
   );
 };

@@ -29,8 +29,6 @@
 
       &.ant-menu {
         background: none;
-        &.ant-menu-horizontal {
-        }
 
         .ant-menu-item {
           display: inline-flex;
@@ -47,6 +45,16 @@
           }
           svg {
             order: 2;
+          }
+          &.ant-menu-item-only-child {
+            //the search icon
+            right: 30px;
+            &:hover {
+              transform: scale(1.1);
+              &::after {
+                border-bottom: none !important;
+              }
+            }
           }
         }
         .ant-menu-submenu {
@@ -80,6 +88,90 @@
             line-height: 40px;
             text-transform: uppercase;
             color: #ffffff;
+          }
+        }
+      }
+    }
+    &.navbar-left-container-search-clicked {
+      background: none;
+      background: #f4f7fa !important;
+
+      .navbar-logo-wrapper {
+        display: none;
+      }
+      .navbar-left-search-clicked {
+        border: none;
+        padding-left: 100px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        width: 100%;
+        margin-left: 350px;
+        &.ant-menu {
+          background: none;
+
+          .ant-menu-item {
+            display: inline-flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            &:hover {
+              &::after {
+                border-bottom: 1px solid #1277826a;
+              }
+            }
+            .ant-menu-title-content {
+              margin-right: 14.5px;
+            }
+            svg {
+              order: 2;
+              path {
+                stroke: #127682;
+              }
+            }
+          }
+          .ant-menu-item-divider {
+            border: 0.5px solid #868686;
+            position: relative;
+            left: 600px;
+            top: 15px;
+            height: 30px;
+            margin-right: 15px;
+          }
+          .ant-menu-submenu {
+            &:hover {
+              &::after {
+                border-bottom: 1px solid lightgray !important;
+              }
+            }
+            &.ant-menu-submenu-horizontal {
+              .ant-menu-submenu-title {
+                display: inline-flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                svg {
+                  order: 2;
+                  path {
+                    stroke: #127682;
+                  }
+                }
+                .ant-menu-title-content {
+                  margin-right: 14.5px;
+                }
+              }
+            }
+          }
+          .ant-menu-item,
+          .ant-menu-submenu {
+            span.ant-menu-title-content {
+              font-family: "Sofia Pro";
+              font-style: normal;
+              font-weight: 400;
+              font-size: 20px;
+              line-height: 40px;
+              text-transform: uppercase;
+              color: #127682;
+            }
           }
         }
       }

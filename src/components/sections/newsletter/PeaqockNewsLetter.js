@@ -152,11 +152,14 @@ export const PeaqockNewsLetter = () => {
             <span>Please type an email address !</span>
           </div>
         )}
-        {validError && inputValue?.length !== 0 && (
-          <div className="peaqock-newsletter__error-valid-msg">
-            <span>Please type a valid email address !</span>
-          </div>
-        )}
+        {validError &&
+          inputValue?.length !== 0 &&
+          !openAlert &&
+          !isValidEmail(inputValue) && (
+            <div className="peaqock-newsletter__error-valid-msg">
+              <span>Please type a valid email address !</span>
+            </div>
+          )}
         {validErrorIcon &&
           !validError &&
           !openAlert &&

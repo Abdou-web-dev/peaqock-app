@@ -1,11 +1,24 @@
 import { Menu } from "antd";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { ArrowIcon, AvatarIcon, SmsIcon } from "../icons/Icons";
+import {
+  ArrowIcon,
+  AvatarIcon,
+  AvatarIconSearch,
+  SmsIcon,
+} from "../icons/Icons";
+import { Search } from "../icons/Search";
 import { PeaqockLogo } from "../logos/PeaqockLogo";
 import "./nav_styles.scss";
+//this is a named export
 
 export function NavBar() {
-  //this is a named export
+  let navigate = useNavigate();
+  const selectedKey = useLocation().pathname;
+  let selectedKeyPath =
+    selectedKey === "/search" ||
+    selectedKey === "/category" ||
+    selectedKey === "/users" ||
+    selectedKey === "/settings";
   const items = [
     {
       key: "2",
@@ -57,6 +70,40 @@ export function NavBar() {
         },
       ],
     },
+    selectedKeyPath
+      ? null
+      : {
+          label: null,
+          key: "5_1",
+          icon: <Search />,
+          onClick: () => {
+            navigate("/search");
+          },
+          // disabled: selectedKey === "/search" ? true : false,
+        },
+    //add these 2 items only when users navigates to search page
+    selectedKeyPath
+      ? {
+          key: "5_3",
+          type: "divider",
+        }
+      : null,
+    selectedKeyPath
+      ? {
+          key: "5_2",
+          icon: <ArrowIcon />,
+          label: "user name",
+        }
+      : null,
+
+    selectedKeyPath
+      ? {
+          key: "5_4",
+          icon: <AvatarIconSearch />,
+          // label: null,
+          disabled: false,
+        }
+      : null,
   ];
   const items2 = [
     {
@@ -89,7 +136,7 @@ export function NavBar() {
       ],
     },
   ];
-  const highlight = () => {
+  const select = () => {
     if (selectedKey === "/") {
       return ["1"];
     } else if (selectedKey === "/about") {
@@ -99,18 +146,20 @@ export function NavBar() {
     } else if (selectedKey === "/news") {
       return ["4"];
     } else if (selectedKey === "/subpage1") {
-      return ["4"];
+      return ["5"];
     }
   };
-  let navigate = useNavigate();
-  const selectedKey = useLocation().pathname;
 
   return (
     <div style={{ display: "flex" }} className="navbar">
       <div
-        className="navbar-left-container"
+        className={
+          selectedKeyPath
+            ? "navbar-left-container-search-clicked navbar-left-container"
+            : "navbar-left-container"
+        }
         style={{
-          width: "83%",
+          width: selectedKeyPath ? "100%" : "83%",
         }}
       >
         <div className="navbar-logo-wrapper">
@@ -121,11 +170,12 @@ export function NavBar() {
           </Link>
         </div>
         <Menu
-          className="navbar-left"
+          className={
+            selectedKeyPath ? "navbar-left-search-clicked" : "navbar-left"
+          }
           mode="horizontal"
-          // theme="dark"
           defaultSelectedKeys={["1"]}
-          selectedKeys={highlight()}
+          selectedKeys={select()}
           items={items}
         />
       </div>
@@ -133,11 +183,12 @@ export function NavBar() {
         className="navbar-right"
         mode="horizontal"
         defaultSelectedKeys={["1"]}
-        selectedKeys={highlight()}
+        selectedKeys={select()}
         items={items2}
         style={{
           background: "linear-gradient(90deg, #F7AE28 -9.83%, #F8D061 104%)",
           width: "17%",
+          display: selectedKeyPath ? "none" : "",
         }}
       />
     </div>

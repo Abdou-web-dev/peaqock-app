@@ -1,5 +1,4 @@
 import { BackTop, Button, Col, Dropdown, Menu, Row } from "antd";
-import { useState } from "react";
 import toTop from "../../../assets/images/backto-top.svg";
 import call from "../../../assets/images/call.svg";
 import findUs from "../../../assets/images/findUs.svg";
@@ -10,7 +9,6 @@ import { FooterHeader } from "./FooterHeader";
 import { FooterInfo } from "./FooterInfo";
 import { FooterLink } from "./FooterLink";
 import { FooterSocialLinks } from "./FooterSocialLinks";
-
 import "./footer_styles.scss";
 const menu = (
   <Menu
@@ -21,9 +19,15 @@ const menu = (
         label: `Link 1`,
       },
       {
+        type: "divider",
+      },
+      {
         key: "2",
         label: `Link 2`,
         disabled: false,
+      },
+      {
+        type: "divider",
       },
       {
         key: "3",
@@ -40,7 +44,6 @@ const menu = (
   />
 );
 export const PeaqockFooter = ({}) => {
-  const [showDropdown, setShowDropdown] = useState(false);
   return (
     <div className="peaqock-footer">
       <Row className="peaqock-footer-row0">
@@ -64,21 +67,11 @@ export const PeaqockFooter = ({}) => {
           </div>
           <div className="peaqock-footer-row0-elem2">
             <Dropdown
+              trigger={["click"]}
               className="peaqock-footer-row0-elem2-dropdown"
-              open={showDropdown}
               overlay={menu}
             >
-              <Button
-                className="peaqock-footer-elem2-btn"
-                onClick={() => {
-                  setShowDropdown(true);
-                }}
-                onMouseOver={() => setShowDropdown(false)}
-                onBlur={() => setShowDropdown(false)}
-                onKeyDown={() => {
-                  setShowDropdown(false);
-                }}
-              >
+              <Button className="peaqock-footer-elem2-btn">
                 <img src={supprtIcon} alt="" />
                 <span>{`Support`} </span>
               </Button>

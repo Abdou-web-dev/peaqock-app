@@ -66,7 +66,6 @@
       .peaqock-footer-row0-elem2 {
         order: 1;
         .peaqock-footer-row0-elem2-dropdown {
-          background-color: red;
         }
         .peaqock-footer-elem2-btn {
           background: linear-gradient(
@@ -209,6 +208,7 @@
     background: linear-gradient(176.51deg, #f7af285b -3.59%, #ffde8272 132.6%);
     border-radius: 5px;
     width: 220px;
+    // bottom: 5px;
     .ant-dropdown-menu-item {
       // color: rgba(3, 214, 84, 0.3);
       &.ant-dropdown-menu-item-only-child {

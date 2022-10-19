@@ -1,0 +1,90 @@
+.user-header {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  .user-header-input {
+    background: #e6eaf0;
+    border-radius: 10px;
+    width: 1034px;
+    height: 60px;
+    .ant-input {
+      background: none !important;
+    }
+  }
+
+  .user-header-filter-btn {
+    background: none;
+    border: none;
+  }
+  .user-header-search-btn {
+    width: 210px;
+    height: 50px;
+    background: linear-gradient(292.92deg, #20c7ab -2.09%, #127682 66.4%);
+    border-radius: 60px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    &:hover,
+    &:focus {
+      background: linear-gradient(292.92deg, #20c7ab -2.09%, #127682 66.4%);
+    }
+
+    span {
+      font-family: "Sofia Pro";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 20px;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-left: 25px;
+    }
+  }
+}
+
+.user-list-header {
+  display: flex;
+  gap: 130px;
+}
+
+.user-list {
+  margin-top: 40px;
+
+  .user-list-inner {
+    .user-list-inner-elems {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 100px;
+      &:hover {
+        transform: scale(1.0035);
+        text-decoration: underline;
+      }
+      &.inner-elems-filtered {
+        &:hover {
+          transform: scale(1.0035);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .no-user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+      font-family: "Sofia Pro";
+      font-style: normal;
+      font-weight: 900;
+      font-size: 20px;
+      line-height: 0px;
+      letter-spacing: 1.5px;
+      color: black;
+      text-transform: initial;
+      &::first-letter {
+        text-transform: capitalize;
+      }
+    }
+  }
+}

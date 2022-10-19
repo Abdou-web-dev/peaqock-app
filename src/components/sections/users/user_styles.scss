@@ -1,0 +1,123 @@
+@mixin text_styles {
+  font-family: "Sofia Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 0px;
+  letter-spacing: 0.1px;
+  color: #636f75;
+  text-transform: capitalize;
+}
+@mixin span_styles {
+  font-family: "Sofia Pro";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 0px;
+  letter-spacing: 0.1px;
+  color: #a7abad;
+}
+@mixin results_styles {
+  font-weight: bolder;
+  font-size: larger;
+  color: black;
+}
+@mixin results_styles_2 {
+  font-weight: bolder;
+  font-size: larger;
+  color: darkgray;
+  letter-spacing: 1px;
+}
+
+@mixin d_flex {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.user-component-username {
+  @include d_flex;
+  span {
+    @include text_styles;
+  }
+  .span_1 {
+    @include span_styles;
+  }
+}
+
+.user-component-email {
+  @include d_flex;
+
+  span {
+    @include text_styles;
+    text-transform: none !important;
+  }
+
+  .span_1 {
+    @include span_styles;
+  }
+}
+.user-component-country {
+  @include d_flex;
+
+  span {
+    @include text_styles;
+  }
+  .span_1 {
+    @include span_styles;
+  }
+}
+.user-component-company {
+  @include d_flex;
+
+  span {
+    @include text_styles;
+  }
+  .span_1 {
+    @include span_styles;
+  }
+}
+.user-component-reg-date {
+  @include d_flex;
+
+  span {
+    @include text_styles;
+    font-weight: 300;
+  }
+  .span_1 {
+    @include span_styles;
+  }
+}
+.user-component-actions {
+  @include d_flex;
+  .span_1 {
+    @include span_styles;
+    position: relative;
+    top: 15px;
+  }
+  position: relative;
+  bottom: 15px;
+}
+
+.element-filtered-black {
+  @include d_flex;
+  span {
+    @include text_styles;
+    @include results_styles;
+  }
+  .span_1 {
+    @include span_styles;
+  }
+}
+.element-filtered-gray {
+  @include d_flex;
+  span {
+    @include text_styles;
+    @include results_styles_2;
+    text-transform: none;
+  }
+  .span_1 {
+    @include span_styles;
+  }
+}
